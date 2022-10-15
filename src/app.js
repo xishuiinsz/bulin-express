@@ -27,25 +27,21 @@ app.use(
 app.use(express.static(path.join(__dirname, 'public')))
 
 //导入路由对象，路由中间件写在最后
-/**
-const obj = require(path.join(__dirname,"routers/accountRouter.js"))
- */
-// const accountRouter = require(path.join(__dirname, 'routers/accountRouter.js'))
-// const studentManagerRouter = require(path.join(
-//   __dirname,
-//   'routers/studentManagerRouter.js'
-// ))
-// app.use('/account', accountRouter)
+const creditInfo = require(path.join(__dirname, 'routers/creditInfo.js'))
+
+app.use('/creditInfo', creditInfo)
 // app.use('/studentmanager', studentManagerRouter)
-const dbFile = path.join(__dirname, 'database/chinook.db')
-const db = require('better-sqlite3')(dbFile, {})
-const row = db.prepare('SELECT * FROM employees WHERE EmployeeId=?').get(1)
-console.log(row)
+// const dbFile = path.join(__dirname, 'database/chinook.db')
+// const db = require('better-sqlite3')(dbFile, {})
+// const row = db.prepare('SELECT * FROM employees WHERE EmployeeId=?').get(1)
+// console.log(row)
 //启动
-app.listen(3000, '0.0.0.0', (err) => {
+const port = 3000
+const server = 'bulin.china.com'
+app.listen(port, server, (err) => {
   if (err) {
-    console.log(err)
+    console.error(err)
   }
 
-  console.log('start ok')
+  console.info(`[${server}] server is starting successfully on port:${port}`)
 })
