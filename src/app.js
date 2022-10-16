@@ -3,13 +3,17 @@ const express = require('express')
 const path = require('path')
 const bodyParser = require('body-parser')
 const session = require('express-session')
-
+const fileUpload = require('express-fileupload')
 //创建app
 const app = express()
 
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }))
-
+app.use(
+  fileUpload({
+    limits: { fileSize: 50 * 1024 * 1024 }
+  })
+)
 // parse application/json
 app.use(bodyParser.json())
 

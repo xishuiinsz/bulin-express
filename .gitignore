@@ -61,3 +61,5 @@ typings/
 .next
 
 SQLiteSpy.db3
+
+src/public/uploads/
