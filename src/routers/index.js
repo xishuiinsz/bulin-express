@@ -13,6 +13,4 @@ const registerRoute = (app) => {
   app.use('/upload', upload)
 }
 
-module.exports = {
-  registerRoute
-}
+module.exports = registerRoute

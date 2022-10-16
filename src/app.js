@@ -31,7 +31,7 @@ app.use(
 app.use(express.static(path.join(__dirname, 'public')))
 
 //注册路由
-const { registerRoute } = require(path.join(__dirname, 'routers/index.js'))
+const registerRoute = require(path.join(__dirname, 'routers/index.js'))
 registerRoute(app)
 
 //启动
