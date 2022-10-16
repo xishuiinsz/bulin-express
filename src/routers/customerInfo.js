@@ -17,6 +17,8 @@ const customerInfoController = require(path.join(
 customerInfoRouter.get('/', customerInfoController.getCustomerInfoList)
 // 更新 客户 信息
 customerInfoRouter.put('/', customerInfoController.updateCustomerInfoList)
+// 删除 客户 信息
+customerInfoRouter.delete('/', customerInfoController.deleteCustomerInfoList)
 
 // 导出路由对象
 module.exports = customerInfoRouter

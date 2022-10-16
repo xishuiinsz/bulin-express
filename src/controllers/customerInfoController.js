@@ -8,7 +8,7 @@ exports.getCustomerInfoList = (req, res) => {
   const dbFile = path.join(__dirname, '../database/chinook.db')
   const Database = require('better-sqlite3')
   const db = new Database(dbFile, { verbose: console.log })
-  const sqlStr = `SELECT * FROM customers `
+  const sqlStr = `SELECT * FROM customers order by customerId`
   let customerInfo = db.prepare(sqlStr).all()
   const pageTotal = customerInfo.length
   customerInfo = customerInfo.map((employee) => {
@@ -99,4 +99,37 @@ exports.updateCustomerInfoList = (req, res) => {
     code: '1',
     msg: '更新失败'
   })
+  db.close()
+}
+/**
+ * 删除 客户  信息列表数据
+ */
+exports.deleteCustomerInfoList = (req, res) => {
+  const { customerId } = req.query
+  const dbFile = path.join(__dirname, '../database/chinook.db')
+  const Database = require('better-sqlite3')
+  const db = new Database(dbFile, { verbose: console.log })
+  let sqlStr = 'DELETE from customers '
+  sqlStr += ' WHERE customerId =@customerId'
+  const updatedo = db.prepare(sqlStr)
+  let result
+  try {
+    result = updatedo.run({
+      customerId
+    })
+  } catch (error) {
+    console.error(error.message)
+  }
+
+  if (result) {
+    res.send({
+      code: '0',
+      msg: '删除成功'
+    })
+  }
+  res.send({
+    code: '1',
+    msg: '删除失败'
+  })
+  db.close()
 }
