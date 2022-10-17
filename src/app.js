@@ -4,6 +4,7 @@ const path = require('path')
 const bodyParser = require('body-parser')
 const session = require('express-session')
 const fileUpload = require('express-fileupload')
+const { logGreen } = require('./utils')
 //创建app
 const app = express()
 
@@ -42,5 +43,5 @@ app.listen(port, server, (err) => {
     console.error(err)
   }
 
-  console.info(`[${server}] server is starting successfully on port:${port}`)
+  logGreen(`[${server}] server is starting successfully on port:${port}`)
 })
