@@ -31,13 +31,12 @@ app.use(
 //设置静态资源根目录
 app.use(express.static(path.join(__dirname, 'public')))
 
-//注册路由
 const registerRoute = require(path.join(__dirname, 'routers/index.js'))
 registerRoute(app)
 
 //启动
 const port = 3000
-const server = 'localhost'
+const server = 'windows10.microdone.cn'
 app.listen(port, server, (err) => {
   if (err) {
     console.error(err)
