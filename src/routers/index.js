@@ -16,6 +16,10 @@ const registerRoute = (app) => {
   // 文件上传
   const upload = require(path.join(__dirname, 'upload.js'))
   app.use('/upload', upload)
+
+  // 在线海报
+  const myPoster = require(path.join(__dirname, 'myPoster.js'))
+  app.use('/myPoster', myPoster)
 }
 
 module.exports = registerRoute
