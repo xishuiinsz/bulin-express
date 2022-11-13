@@ -1,6 +1,20 @@
 {
     "list": [
         {
+            "type": "Rect",
+            "attrs": {
+                "id": "backgroundRect",
+                "width": 1920,
+                "height": 1080,
+                "x": 0,
+                "y": 0,
+                "strokeWidth": 1,
+                "stroke": "#fff",
+                "fill": "rgb(50, 65, 87)",
+                "fillPatternImage": null
+            }
+        },
+        {
             "type": "Image",
             "attrs": {
                 "id": "1",

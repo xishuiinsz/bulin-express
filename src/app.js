@@ -42,5 +42,5 @@ app.listen(port, server, (err) => {
     console.error(err)
   }
 
-  logGreen(`[${server}] server is starting successfully on port:${port}`)
+  logGreen(`server [${server}] is starting successfully on port:${port}`)
 })
