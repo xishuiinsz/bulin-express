@@ -20,6 +20,9 @@ const registerRoute = (app) => {
   // 在线海报
   const myPoster = require(path.join(__dirname, 'myPoster.js'))
   app.use('/myPoster', myPoster)
+  // 图片墙
+  const images = require(path.join(__dirname, 'images.js'))
+  app.use('/images', images)
 }
 
 module.exports = registerRoute
