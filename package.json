@@ -20,8 +20,8 @@
   "homepage": "https://github.com/xishuiinsz/bulin-express#readme",
   "dependencies": {
     "art-template": "^4.13.2",
-    "better-sqlite3": "^7.6.2",
-    "body-parser": "^1.18.3",
+    "better-sqlite3": "^9.2.2",
+    "body-parser": "^1.20.2",
     "captchapng": "0.0.1",
     "chalk": "^4.1.2",
     "express": "^4.16.4",
