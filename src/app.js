@@ -36,7 +36,7 @@ registerRoute(app)
 
 //启动
 const port = 3000
-const server = 'windows10.microdone.cn'
+const server = 'localhost.bulin.com'
 app.listen(port, server, (err) => {
   if (err) {
     console.error(err)
